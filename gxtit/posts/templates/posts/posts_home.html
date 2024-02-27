@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} GXTIT {% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>GXTIT</h1>
+
+        {% if posts %}
+            {% for el in posts %}
+                <div class="alert alert-warning">
+                    <h2>{{ el.title }}</h2>
+                    <p>{{ el.date }}</p>
+                    <h3>{{ el.anons }}</h3>
+                    <p>{{ el.full_text }}</p>
+
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Without posts</p>
+        {% endif %}
+    </div>
+{% endblock %}
